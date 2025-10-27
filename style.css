@@ -1,0 +1,12 @@
+body {
+  background-color: #fffaf8;
+  color: #2b2b2b;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  color: #a66b5b;
+  margin-top: 2rem;
+}

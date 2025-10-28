@@ -6,12 +6,56 @@
   <title>Organic Touch Salon | Hobe Sound, FL</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+<script>
+  const slides = document.querySelector('.slides');
+  const images = document.querySelectorAll('.slides img');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let index = 0;
+
+  function showSlide(i) {
+    if (i >= images.length) index = 0;
+    if (i < 0) index = images.length - 1;
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  next.addEventListener('click', () => { index++; showSlide(index); });
+  prev.addEventListener('click', () => { index--; showSlide(index); });
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    index++;
+    showSlide(index);
+  }, 5000);
+</script>
+
 <body>
   <header>
     <h1>Organic Touch Salon</h1>
     <p>Clean beauty • Hair • Lashes • Nails • Waxing
 Hobe Sound, FL</p>
   </header>
+<section class="carousel">
+  <div class="carousel-container">
+    <div class="slides">
+      <img src="photos/julia-salon-1.jpg" alt="Salon photo 1">
+      <img src="photos/julia-salon-2.jpg" alt="Salon photo 2">
+      <img src="photos/julia-salon-3.jpg" alt="Salon photo 3">
+      <img src="photos/julia-salon-4.jpg" alt="Salon photo 4">
+      <img src="photos/julia-salon-5.jpg" alt="Salon photo 5">
+      <img src="photos/julia-salon-6.jpg" alt="Salon photo 6">
+      <img src="photos/julia-salon-7.jpg" alt="Salon photo 7">
+      <img src="photos/julia-salon-8.jpg" alt="Salon photo 8">
+      <img src="photos/julia-salon-9.jpg" alt="Salon photo 9">
+      <img src="photos/julia-salon-10.jpg" alt="Salon photo 10">
+      <img src="photos/julia-salon-11.jpg" alt="Salon photo 11">
+    </div>
+
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
 <section class="highlights">
   <div class="service">
     <h3>Clean Beauty</h3>
@@ -92,22 +136,6 @@ The Hobe Sound community has been a beautiful home for her blossoming business, 
 
 </body>
 </html>
-
-<section class="carousel">
-  <div class="carousel-container">
-    <div class="slides">
-      <img src="photos/julia-salon-1.jpg" alt="Salon photo 1">
-      <img src="photos/julia-salon-2.jpg" alt="Salon photo 2">
-      <img src="photos/julia-salon-3.jpg" alt="Salon photo 3">
-      <img src="photos/julia-salon-4.jpg" alt="Salon photo 4">
-      <img src="photos/julia-salon-5.jpg" alt="Salon photo 5">
-      <img src="photos/julia-salon-6.jpg" alt="Salon photo 6">
-      <img src="photos/julia-salon-7.jpg" alt="Salon photo 7">
-      <img src="photos/julia-salon-8.jpg" alt="Salon photo 8">
-      <img src="photos/julia-salon-9.jpg" alt="Salon photo 9">
-      <img src="photos/julia-salon-10.jpg" alt="Salon photo 10">
-      <img src="photos/julia-salon-11.jpg" alt="Salon photo 11">
-    </div>
 
     <button class="prev">&#10094;</button>
     <button class="next">&#10095;</button>

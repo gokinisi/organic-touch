@@ -110,7 +110,7 @@ img {
   border-radius: 18px;
 }
 
-/* Arrow buttons */
+
 .carousel button {
   position: absolute;
   top: 50%;
@@ -254,10 +254,7 @@ body {
   color: #4a3a32;
 }
 
-}
 
-.square-booking-btn:hover {
-  background-color: #a67460;
 }
 .square-booking-btn {
   display: inline-block;

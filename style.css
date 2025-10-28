@@ -164,7 +164,7 @@ img {
   object-fit: cover;
 }
 
-/* Arrow buttons */
+/*  */
 .carousel button {
   position: absolute;
   top: 50%;
@@ -249,6 +249,28 @@ p {
   text-decoration: none;
   font-weight: 600;
   transition: background-color 0.3s ease;
+body {
+  background-color: #faf7f6;
+  color: #4a3a32;
+}
+
+}
+
+.square-booking-btn:hover {
+  background-color: #a67460;
+}
+.square-booking-btn {
+  display: inline-block;
+  background-color: #8c5b4a;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .square-booking-btn:hover {

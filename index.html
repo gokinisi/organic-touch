@@ -34,8 +34,62 @@
 <br>Hobe Sound, FL<br>
 </p>
   </header>
-<section class="carousel">
-  <div class="carousel-container">
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelector('.slides');
+  const images = Array.from(document.querySelectorAll('.slides img'));
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  const container = document.querySelector('.carousel');
+  if (!slides || images.length === 0) return; // nothing to run
+
+  let index = 0;
+  let timer = null;
+
+  function goTo(i) {
+    index = (i + images.length) % images.length;     // wrap around
+    slides.style.transform = `translateX(${-index * 100}%)`;
+  }
+
+  function start() {
+    stop();
+    timer = setInterval(() => goTo(index + 1), 4000); // autoslide every 4s
+  }
+
+  function stop() {
+    if (timer) clearInterval(timer);
+    timer = null;
+  }
+
+  // Wait for all images so widths are correct
+  Promise.all(
+    images.map(img => img.complete
+      ? Promise.resolve()
+      : new Promise(res => img.addEventListener('load', res, { once: true }))
+    )
+  ).then(() => {
+    goTo(0);
+    start();
+  });
+
+  // Click controls
+  next?.addEventListener('click', () => { goTo(index + 1); start(); });
+  prev?.addEventListener('click', () => { goTo(index - 1); start(); });
+
+  // Pause on hover (optional but nice)
+  container?.addEventListener('mouseenter', stop);
+  container?.addEventListener('mouseleave', start);
+
+  // Pause when tab not visible
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stop(); else start();
+  });
+
+  // Keep position correct on resize/rotation
+  window.addEventListener('resize', () => goTo(index));
+});
+</script>
+
     <div class="slides">
       <img src="photos/julia-salon-2.jpg" alt="Salon photo 2">
       <img src="photos/julia-salon-3.jpg" alt="Salon photo 3">

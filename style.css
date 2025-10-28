@@ -27,6 +27,52 @@ h1 {
   letter-spacing: 0.04em;
   margin-bottom: 0.5rem;
 }
+/* 0) Good defaults for ALL images */
+img {
+  max-width: 100%;
+  height: auto;       /* prevents stretching */
+  display: block;
+}
+
+/* 1) Hero/banner image */
+.hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* change to 3/2 or 21/9 if you prefer */
+  object-fit: cover;      /* fills the area without squishing */
+  border-radius: 14px;
+}
+
+/* 2) Headshot / portrait */
+.headshot {
+  width: clamp(220px, 28vw, 360px);  /* responsive but never huge */
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* 3) Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;  /* perfect squares; change to 4/3 if you want */
+  object-fit: cover;    /* crops edges instead of warping */
+  border-radius: 12px;
+}
+
+/* 4) Prevent oversized images inside text columns */
+.content img {
+  max-width: min(100%, 720px);
+  margin-inline: auto;
+}
+
+/* 5) Small screens: tighten gaps */
+@media (max-width: 640px) {
+  .gallery { gap: 10px; }
+}
 
 header p {
   font-size: 1.1rem;
@@ -57,6 +103,21 @@ p {
   color: #333;
   margin-bottom: 0.75rem;
 }
+.square-booking-btn {
+  display: inline-block;
+  background-color: #8c5b4a;
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.square-booking-btn:hover {
+  background-color: #a67460;
+}
+
 
 /* Footer */
 footer {

@@ -4,6 +4,42 @@
   margin: 0;
   padding: 0;
 }
+/* === Highlights Section === */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 60px 20px;
+  background-color: #faf7f6;
+  text-align: center;
+}
+
+.highlights .service {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlights .service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.highlights h3 {
+  font-size: 1.3rem;
+  color: #8c5b4a;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.highlights p {
+  font-size: 0.95rem;
+  color: #4a3a32;
+  line-height: 1.6;
+}
+
 
 body {
   font-family: "Inter", "Helvetica Neue", sans-serif;

@@ -12,6 +12,8 @@
   padding: 60px 20px;
   background-color: #faf7f6;
   text-align: center;
+  justify-items: center;   /* centers each card in the grid */
+  align-items: start;      /* keeps top edges aligned *
 }
 
 .highlights .service {
@@ -25,6 +27,8 @@
 .highlights .service:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 300px;      /* ensures equal card widths */
 }
 
 .highlights h3 {
@@ -338,12 +342,27 @@ section, header, footer {
     margin-right: auto;
     max-width: 95%;
     word-wrap: break-word;
+    padding: 0 1rem;
+    max-width: 95%;
+  }
+  .highlights {
+    padding: 40px 10px;
+    gap: 16px;
+  }
+}
+
   }
 
   img {
     max-width: 100%;
     height: auto;
   }
+#about, #booking {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 1rem;
+}
 
 footer p {
   margin: 0.3rem 0;

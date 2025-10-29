@@ -4,213 +4,141 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Organic Touch Salon | Hobe Sound, FL</title>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
-<script>
-  const slides = document.querySelector('.slides');
-  const images = document.querySelectorAll('.slides img');
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
-  let index = 0;
 
-  function showSlide(i) {
-    if (i >= images.length) index = 0;
-    if (i < 0) index = images.length - 1;
-    slides.style.transform = `translateX(${-index * 100}%)`;
-  }
-  next.addEventListener('click', () => { index++; showSlide(index); });
-  prev.addEventListener('click', () => { index--; showSlide(index); });
-
-  // Auto-slide every 5 seconds
-  setInterval(() => {
-    index++;
-    showSlide(index);
-  }, 5000);
-</script>
 <body>
-<header>
-  <h1>Organic Touch Salon</h1>
-  <p>Clean Beauty • Hair • Lashes • Nails • Waxing<br>Hobe Sound, FL</p>
-</header>
-
-</p>
+  <!-- HEADER -->
+  <header>
+    <h1>Organic Touch Salon</h1>
+    <p>Clean Beauty • Hair • Lashes • Nails • Waxing<br>Hobe Sound, FL</p>
   </header>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelector('.slides');
-  const images = Array.from(document.querySelectorAll('.slides img'));
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
-  const container = document.querySelector('.carousel');
-  if (!slides || images.length === 0) return; // nothing to run
 
-  let index = 0;
-  let timer = null;
-
-  function goTo(i) {
-    index = (i + images.length) % images.length;     // wrap around
-    slides.style.transform = `translateX(${-index * 100}%)`;
-  }
-
-  function start() {
-    stop();
-    timer = setInterval(() => goTo(index + 1), 4000); // autoslide every 4s
-  }
-
-  function stop() {
-    if (timer) clearInterval(timer);
-    timer = null;
-  }
-
-  // Wait for all images so widths are correct
-  Promise.all(
-    images.map(img => img.complete
-      ? Promise.resolve()
-      : new Promise(res => img.addEventListener('load', res, { once: true }))
-    )
-  ).then(() => {
-    goTo(0);
-    start();
-  });
-
-  // Click controls
-  next?.addEventListener('click', () => { goTo(index + 1); start(); });
-  prev?.addEventListener('click', () => { goTo(index - 1); start(); });
-
-  // Pause on hover (optional but nice)
-  container?.addEventListener('mouseenter', stop);
-  container?.addEventListener('mouseleave', start);
-
-  // Pause when tab not visible
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) stop(); else start();
-  });
-
-  // Keep position correct on resize/rotation
-  window.addEventListener('resize', () => goTo(index));
-});
-</script>
-<section class="carousel">
-  <div class="carousel-container">
-    <div class="slides">
-      <img src="photos/julia-salon-2.jpg" alt="Salon photo 2">
-      <img src="photos/julia-salon-4.jpg" alt="Salon photo 4">
-      <img src="photos/julia-salon-5.jpg" alt="Salon photo 5">
-      <img src="photos/julia-salon-6.jpg" alt="Salon photo 6">
-      <img src="photos/julia-salon-7.jpg" alt="Salon photo 7">
-      <img src="photos/julia-salon-8.jpg" alt="Salon photo 8">
-      <img src="photos/julia-salon-9.jpg" alt="Salon photo 9">
-      <img src="photos/julia-salon-10.jpg" alt="Salon photo 10">
-      <img src="photos/julia-salon-11.jpg" alt="Salon photo 11">
+  <!-- CAROUSEL -->
+  <section class="carousel">
+    <div class="carousel-container">
+      <div class="slides">
+        <img src="photos/julia-salon-2.jpg" alt="Salon photo 2">
+        <img src="photos/julia-salon-4.jpg" alt="Salon photo 4">
+        <img src="photos/julia-salon-5.jpg" alt="Salon photo 5">
+        <img src="photos/julia-salon-6.jpg" alt="Salon photo 6">
+        <img src="photos/julia-salon-7.jpg" alt="Salon photo 7">
+        <img src="photos/julia-salon-8.jpg" alt="Salon photo 8">
+        <img src="photos/julia-salon-9.jpg" alt="Salon photo 9">
+        <img src="photos/julia-salon-10.jpg" alt="Salon photo 10">
+        <img src="photos/julia-salon-11.jpg" alt="Salon photo 11">
+      </div>
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
     </div>
-    <button class="prev">&#10094;</button>
-    <button class="next">&#10095;</button>
-  </div>
-       <section id="booking">
-    <a href="https://book.squareup.com/appointments/deza8zbeu5urcl/location/ERQGP0JJZEESB/services"
-       class="square-booking-btn"
-       target="_blank" rel="noopener noreferrer">
-       Book Now
-
-<section class="highlights">    <h2>✨✨Salon Highlights ✨✨</h2>
-  <div class="service">
-    <h3>Clean Beauty</h3>
-    <p>Organic, cruelty-free hair, face, lash, and nail care designed to bring out your natural glow.</p>
-  </div>
-
-  <div class="service">
-    <h3>Expert Styling</h3>
-    <p>From effortless blowouts to advanced color and cuts — every style is customized for you.</p>
-  </div>
-
-  <div class="service">
-    <h3>Non Toxic Keratin</h3>
-    <p>Trained in all areas of cosmetology Julia celebrates your natural beauty and helps you shine.</p>
-  </div>
-</section>
-<br> Hair Cut <br>
-<br> Hair Color <br>
-<br> Hair Specialist for Conditioning Treatments <br>
-
-  <section id="about">
-
-<br>Manicure + Pedicure<br>
-
-<br>Clean, careful nail care with a focus on natural health and beautiful, long-lasting finishes.<br>
-<br>Blowouts <br>
-offer smooth, bouncy, or defined — custom techniques for straight, wavy, and curly textures. <br>
-<br>Eyelash Extensions<br>
-<br>Classic to light-volume sets for a clean, natural look with comfortable wear.<br>
-   
-   <br> <p>About Julia<br>
-<br<Julia’s passion for hair began when she was eleven years old. She still remembers watching in awe as a stylist created a fishtail braid — it was pure magic. Inspired, she went home brimming with excitement, asked her stepmom for a little help, and began braiding the hair of anyone with long locks she could find. After moving to the United States from Venezuela, Julia was eager to expand her skills. <br>
-
-
-<br>Julia has spent years working alongside hairstylists with over 30 years of combined experience, learning to work with every type and texture of hair. Her friend helped her master the art of blow drying — especially for curly hair. Through that experience, Julia discovered her love for curls: how to celebrate them, enhance them, and tame them when needed. <br>
-
-<br>Living in Florida brought new opportunities and challenges. Julia took it upon herself to keep learning and growing, evolving into a confident, creative, and compassionate hairstylist and entrepreneur. If you’ve ever struggled to find someone who truly understands curly hair, Julia is your stylist. She does a beautiful job with all hair types, and is growing her community of followers quickly!<br>
-
-
-
-<br>The Hobe Sound community has been a beautiful home for her blossoming business, and she welcomes every new client with warmth, care, and expertise — no matter your hair type or style.</p><br>
   </section>
 
+  <!-- BOOKING BUTTON -->
   <section id="booking">
-<br>
     <a href="https://book.squareup.com/appointments/deza8zbeu5urcl/location/ERQGP0JJZEESB/services"
        class="square-booking-btn"
        target="_blank" rel="noopener noreferrer">
        Book Now
     </a>
   </section>
-<script>
-  const slides = document.querySelector('.slides');
-  const images = document.querySelectorAll('.slides img');
-  const prev = document.querySelector('.prev');
-  const next = document.querySelector('.next');
 
-  let index = 0;
+  <!-- HIGHLIGHTS -->
+  <section class="highlights" id="services">
+    <h2>✨ Salon Highlights ✨</h2>
+    <div class="service">
+      <h3>Clean Beauty</h3>
+      <p>Organic, cruelty-free hair, face, lash, and nail care designed to bring out your natural glow.</p>
+    </div>
 
-  function showSlide(i) {
-    if (i >= images.length) index = 0;
-    if (i < 0) index = images.length - 1;
-    slides.style.transform = `translateX(${-index * 100}%)`;
-  }
+    <div class="service">
+      <h3>Expert Styling</h3>
+      <p>From effortless blowouts to advanced color and cuts — every style is customized for you.</p>
+    </div>
 
-  next.addEventListener('click', () => { index++; showSlide(index); });
-  prev.addEventListener('click', () => { index--; showSlide(index); });
+    <div class="service">
+      <h3>Non-Toxic Keratin</h3>
+      <p>Healthy, smooth, frizz-free results using formaldehyde-free formulas that nourish and protect your hair.</p>
+    </div>
+  </section>
 
-  // Auto-slide every 3 seconds
-  setInterval(() => {
-    index++;
-    showSlide(index);
-  }, 4000);
-</script>
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Julia</h2>
+    <p>Julia’s passion for hair began when she was eleven years old. She still remembers watching in awe as a stylist created a fishtail braid — it was pure magic. Inspired, she went home brimming with excitement, asked her stepmom for a little help, and began braiding the hair of anyone with long locks she could find.</p>
 
+    <p>After moving to the United States from Venezuela, Julia was eager to expand her skills. She has spent years working alongside hairstylists with over 30 years of combined experience, mastering every type and texture of hair. Her friend helped her perfect the art of blow drying — especially for curly hair — and she learned to love and celebrate the curl.</p>
+
+    <p>Living in Florida brought new opportunities and challenges. Julia took it upon herself to keep learning and growing, evolving into a confident, creative, and compassionate hairstylist and entrepreneur. If you’ve ever struggled to find someone who truly understands curly hair, Julia is your stylist.</p>
+
+    <p>The Hobe Sound community has been a beautiful home for her blossoming business, and she welcomes every new client with warmth, care, and expertise — no matter your hair type or style.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <p><strong>Organic Touch Salon</strong></p>
+      <p>
+        <a href="https://www.google.com/maps?q=Organic+Touch+Salon,+Bridge+Road,+Hobe+Sound,+FL"
+           target="_blank" rel="noopener noreferrer">
+           Bridge Road • Hobe Sound, FL
+        </a>
+      </p>
+      <p>Phone: <a href="tel:17722989848">(772) 298-9848</a></p>
+      <p>Clean Beauty • Hair • Lashes • Nails</p>
+      <p>Built by <a href="https://nervarah.com" target="_blank">Kris @ Nervarah.com</a></p>
+      <p>© Organic Touch Salon</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const slides = document.querySelector('.slides');
+      const images = Array.from(document.querySelectorAll('.slides img'));
+      const prev = document.querySelector('.prev');
+      const next = document.querySelector('.next');
+      const container = document.querySelector('.carousel');
+      if (!slides || images.length === 0) return;
+
+      let index = 0;
+      let timer = null;
+
+      function goTo(i) {
+        index = (i + images.length) % images.length;
+        slides.style.transform = `translateX(${-index * 100}%)`;
+      }
+
+      function start() {
+        stop();
+        timer = setInterval(() => goTo(index + 1), 4000);
+      }
+
+      function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+
+      Promise.all(
+        images.map(img => img.complete
+          ? Promise.resolve()
+          : new Promise(res => img.addEventListener('load', res, { once: true }))
+        )
+      ).then(() => {
+        goTo(0);
+        start();
+      });
+
+      next?.addEventListener('click', () => { goTo(index + 1); start(); });
+      prev?.addEventListener('click', () => { goTo(index - 1); start(); });
+
+      container?.addEventListener('mouseenter', stop);
+      container?.addEventListener('mouseleave', start);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop(); else start();
+      });
+      window.addEventListener('resize', () => goTo(index));
+    });
+  </script>
 </body>
 </html>
-    <button class="next">&#10095;</button>
-  </div>
-</section>
-
-
-
-<footer>
-  <div class="footer-content">
-    <p><strong>Organic Touch Salon</strong></p>
-    <p>
-      <a href="https://www.google.com/maps?q=Organic+Touch+Salon,+Bridge+Road,+Hobe+Sound,+FL"
-         target="_blank" rel="noopener noreferrer">
-         Bridge Road • Hobe Sound, FL
-      </a>
-    </p>
-    <p>Phone: <a href="tel:17722989848">(772) 298-9848</a></p>
-    <p>Clean Beauty • Hair • Lashes</p>
-    <p>Built by <a href="https://nervarah.com" target="_blank">Kris @ Nervarah.com</a></p>
-    <p>© Organic Touch Salon</p>
-  </div>
-</footer>
-<script>
-  // Auto-updates the year
-  document.getElementById('year').textContent
-

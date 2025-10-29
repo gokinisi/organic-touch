@@ -126,9 +126,6 @@ img {
   z-index: 10;
 }
 
-.carousel button:hover {
-  background: rgba(255, 255, 255, 0.95);
-  transform: translateY(-50%) scale(1.1);
 }
 
 .prev { left: 14px; }
@@ -239,22 +236,6 @@ h3 {
 p {
   color: #333;
   margin-bottom: 0.75rem;
-}
-.square-booking-btn {
-  display: inline-block;
-  background-color: #8c5b4a;
-  color: #fff;
-  padding: 14px 30px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
-body {
-  background-color: #faf7f6;
-  color: #4a3a32;
-}
-
-
 }
 .square-booking-btn {
   display: inline-block;

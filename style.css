@@ -362,8 +362,28 @@ section, header, footer {
   margin: 0 auto;
   text-align: center;
   padding: 0 1rem;
+ }
+footer {
+  background-color: #f6e7e1;
+  color: #333;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  border-top: 2px solid #e0c8c0;
 }
 
-footer p {
-  margin: 0.3rem 0;
+footer a {
+  color: #8c5b4a;
+  text-decoration: none;
+  font-weight: 600;
 }
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-content p {
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+

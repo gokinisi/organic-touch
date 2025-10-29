@@ -4,46 +4,10 @@
   margin: 0;
   padding: 0;
 }
-/* === Highlights Section === */
-.highlights {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
-  padding: 60px 20px;
-  background-color: #faf7f6;
-  text-align: center;
-  justify-items: center;   /* centers each card in the grid */
-  align-items: start;      /* keeps top edges aligned *
-}
 
-.highlights .service {
-  background: #fff;
-  border-radius: 14px;
-  padding: 24px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+body, html {
+  overflow-x: hidden;
 }
-
-.highlights .service:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  max-width: 300px;      /* ensures equal card widths */
-}
-
-.highlights h3 {
-  font-size: 1.3rem;
-  color: #8c5b4a;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
-}
-
-.highlights p {
-  font-size: 0.95rem;
-  color: #4a3a32;
-  line-height: 1.6;
-}
-
 
 body {
   font-family: "Inter", "Helvetica Neue", sans-serif;
@@ -62,45 +26,70 @@ header {
 }
 
 h1 {
-  font-size: 2.2rem;
+  font-family: 'Parisienne', cursive;
+  font-size: clamp(2rem, 6vw, 3.4rem);
   color: #a66b5b;
-h1 { font-family: 'Parisienne', cursive; }
   letter-spacing: 0.04em;
   margin-bottom: 0.5rem;
-}
-/* 0) Good defaults for ALL images */
-img {
-  max-width: 100%;
-  height: auto;       /* prevents stretching */
-  display: block;
+  line-height: 1.2;
 }
 
-/* 1) Hero/banner image */
-.hero img {
-  width: 100%;
-  aspect-ratio: 16 / 9;   /* change to 3/2 or 21/9 if you prefer */
-  object-fit: cover;      /* fills the area without squishing */
-  border-radius: 14px;
+header p {
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  color: #555;
+  letter-spacing: 0.3px;
+  margin-top: 0.3rem;
 }
 
-/* 2) Headshot / portrait */
-.headshot {
-  width: clamp(220px, 28vw, 360px);  /* responsive but never huge */
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
-  border-radius: 14px;
-/* Carousel core */
-.slides {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-  will-change: transform;
+/* === Highlights Section === */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 60px 20px;
+  background-color: #faf7f6;
+  text-align: center;
+  justify-items: center;
+  align-items: start;
 }
-.slides img {
-  flex: 0 0 100%;     /* <- exactly one slide width */
+
+.highlights .service {
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+  max-width: 300px;
+}
+
+.highlights .service:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.highlights h3 {
+  font-size: 1.3rem;
+  color: #8c5b4a;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.highlights p {
+  font-size: 0.95rem;
+  color: #4a3a32;
+  line-height: 1.6;
+}
+
+/* Carousel */
+.carousel {
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
 .slides {
@@ -112,9 +101,8 @@ img {
   width: 100%;
   flex-shrink: 0;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 16px;
 }
-
 
 .carousel button {
   position: absolute;
@@ -131,114 +119,14 @@ img {
   z-index: 10;
 }
 
+.carousel button:hover {
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .prev { left: 14px; }
 .next { right: 14px; }
 
-/* For mobile screens */
-@media (max-width: 640px) {
-  .carousel {
-    max-width: 100%;
-    border-radius: 0;
-  }
-  .carousel button {
-    font-size: 1.6rem;
-    padding: 4px 10px;
-  }
-
-.carousel-container {
-  position: relative;
-}
-
-.slides {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
-
-.slides img {
-  width: 100%;
-  flex-shrink: 0;
-  border-radius: 16px;
-  object-fit: cover;
-}
-
-/*  */
-.carousel button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.7);
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  border-radius: 50%;
-  padding: 6px 12px;
-  color: #8c5b4a;
-  transition: background 0.3s ease;
-}
-
-.carousel button:hover {
-  background: rgba(255, 255, 255, 0.95);
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-
-/* 3) Gallery grid */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
-}
-.gallery img {
-  width: 100%;
-  aspect-ratio: 1 / 1;  /* perfect squares; change to 4/3 if you want */
-  object-fit: cover;    /* crops edges instead of warping */
-  border-radius: 12px;
-}
-
-/* 4) Prevent oversized images inside text columns */
-.content img {
-  max-width: min(100%, 720px);
-  margin-inline: auto;
-}
-
-/* 5) Small screens: tighten gaps */
-@media (max-width: 640px) {
-  .gallery { gap: 10px; }
-}
-
-header p {
-  font-size: 1.1rem;
-  color: #555;
-}
-
-/* Sections */
-section {
-  max-width: 700px;
-  margin: 2.5rem auto;
-  padding: 0 1rem;
-}
-
-h2 {
-  color: #a66b5b;
-  margin-bottom: 0.75rem;
-  font-size: 1.6rem;
-}
-
-h3 {
-  color: #444;
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-}
-
-/* Paragraphs */
-p {
-  color: #333;
-  margin-bottom: 0.75rem;
-}
+/* Booking Button */
 .square-booking-btn {
   display: inline-block;
   background-color: #8c5b4a;
@@ -256,114 +144,15 @@ p {
   background-color: #a67460;
 }
 
-/* --- Responsive Carousel Container --- */
-.carousel {
-  width: 100%;
-  max-width: 900px;            /* desktop limit */
-  margin: 40px auto;
-  position: relative;
-  overflow: hidden;
-  border-radius: 16px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-}
-
-/* --- Contain it further on mobile --- */
-@media (max-width: 768px) {
-  .carousel {
-    max-width: 90%;            /* keeps it aligned with text content */
-    margin: 30px auto;
-    border-radius: 12px;
-  }
-  .slides img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-}
-#about, #booking {
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-/* Footer */
-footer {
-  background-color: #f6e7e1;
-  color: #333;
-  padding: 1.5rem;
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  font-size: 0.9rem;
-}
-/* --- General text centering and containment --- */
-body, html {
-  overflow-x: hidden; /* prevents any horizontal scrolling */
-}
-
-section, header, footer {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 90vw;    /* keeps text inside screen width */
-  padding: 0 5vw;     /* adds small side padding on mobile */
-  box-sizing: border-box;
-}
-
-/* --- Mobile adjustments --- */
-@media (max-width: 768px) {
-  h1, h2, h3, p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 95%;
-    word-wrap: break-word; /* prevents text overflow */
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-/* --- General text centering and containment --- */
-body, html {
-  overflow-x: hidden;
-}
-
-section, header, footer {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 90vw;
-  padding: 0 5vw;
-  box-sizing: border-box;
-}
-
-/* --- Mobile adjustments --- */
-@media (max-width: 768px) {
-  h1, h2, h3, p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 95%;
-    word-wrap: break-word;
-    padding: 0 1rem;
-    max-width: 95%;
-  }
-  .highlights {
-    padding: 40px 10px;
-    gap: 16px;
-  }
-}
-
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
+/* About & Booking Containers */
 #about, #booking {
   max-width: 700px;
   margin: 0 auto;
   text-align: center;
   padding: 0 1rem;
- }
+}
+
+/* Footer */
 footer {
   background-color: #f6e7e1;
   color: #333;
@@ -388,3 +177,30 @@ footer a:hover {
   line-height: 1.5;
 }
 
+/* --- Mobile adjustments --- */
+@media (max-width: 768px) {
+  h1, h2, h3, p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+    word-wrap: break-word;
+    padding: 0 1rem;
+  }
+
+  .highlights {
+    padding: 40px 10px;
+    gap: 16px;
+  }
+
+  .carousel {
+    max-width: 90%;
+    margin: 30px auto;
+    border-radius: 12px;
+  }
+
+  .carousel button {
+    font-size: 1.6rem;
+    padding: 4px 10px;
+  }
+}

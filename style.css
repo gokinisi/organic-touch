@@ -141,9 +141,6 @@ img {
     font-size: 1.6rem;
     padding: 4px 10px;
   }
-}
-
-}
 
 .carousel-container {
   position: relative;
@@ -248,7 +245,6 @@ p {
   font-size: 1.05rem;
   letter-spacing: 0.5px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  );
 }
 
 .square-booking-btn:hover {
@@ -294,6 +290,60 @@ footer {
   width: 100%;
   font-size: 0.9rem;
 }
+/* --- General text centering and containment --- */
+body, html {
+  overflow-x: hidden; /* prevents any horizontal scrolling */
+}
+
+section, header, footer {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90vw;    /* keeps text inside screen width */
+  padding: 0 5vw;     /* adds small side padding on mobile */
+  box-sizing: border-box;
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 768px) {
+  h1, h2, h3, p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+    word-wrap: break-word; /* prevents text overflow */
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+/* --- General text centering and containment --- */
+body, html {
+  overflow-x: hidden;
+}
+
+section, header, footer {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 90vw;
+  padding: 0 5vw;
+  box-sizing: border-box;
+}
+
+/* --- Mobile adjustments --- */
+@media (max-width: 768px) {
+  h1, h2, h3, p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+    word-wrap: break-word;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 
 footer p {
   margin: 0.3rem 0;

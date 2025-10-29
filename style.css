@@ -248,13 +248,41 @@ p {
   font-size: 1.05rem;
   letter-spacing: 0.5px;
   transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  );
 }
 
 .square-booking-btn:hover {
   background-color: #a67460;
 }
 
+/* --- Responsive Carousel Container --- */
+.carousel {
+  width: 100%;
+  max-width: 900px;            /* desktop limit */
+  margin: 40px auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* --- Contain it further on mobile --- */
+@media (max-width: 768px) {
+  .carousel {
+    max-width: 90%;            /* keeps it aligned with text content */
+    margin: 30px auto;
+    border-radius: 12px;
+  }
+  .slides img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+#about, #booking {
+  max-width: 90%;
+  margin: 0 auto;
+}
 
 /* Footer */
 footer {
